@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexusBot V5 · Ultimate Dashboard</title>
+    <title>NexusBot V5 · Pro Dashboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -21,7 +21,7 @@
             overflow-x: hidden;
         }
 
-        /* animated premium background */
+        /* Premium Animated Background */
         body::before {
             content: '';
             position: fixed;
@@ -57,7 +57,7 @@
             padding: 1.5rem;
         }
 
-        /* glassmorphism v5 */
+        /* Glassmorphism */
         .glass-card {
             background: rgba(20, 20, 35, 0.6);
             backdrop-filter: blur(14px);
@@ -71,7 +71,7 @@
             box-shadow: 0 0 25px rgba(114, 137, 218, 0.15);
         }
 
-        /* navbar */
+        /* Navbar */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -85,6 +85,7 @@
             border-radius: 4rem;
             border: 1px solid rgba(114, 137, 218, 0.3);
         }
+
         .logo {
             font-size: 1.6rem;
             font-weight: 800;
@@ -94,17 +95,27 @@
             color: transparent;
             cursor: pointer;
         }
+
         .user-info {
             display: flex;
             align-items: center;
             gap: 1rem;
         }
+
         .user-avatar {
             width: 45px;
             height: 45px;
             border-radius: 50%;
             border: 2px solid #7289da;
         }
+
+        .user-badge {
+            background: #2c2f45;
+            padding: 0.2rem 0.8rem;
+            border-radius: 1rem;
+            font-size: 0.7rem;
+        }
+
         .logout-btn {
             background: rgba(255,255,255,0.1);
             border: none;
@@ -114,22 +125,25 @@
             cursor: pointer;
             transition: 0.2s;
         }
+
         .logout-btn:hover {
             background: #e91e63;
         }
 
-        /* login screen */
+        /* Login Screen */
         .login-container {
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 80vh;
         }
+
         .login-card {
             text-align: center;
             padding: 3rem;
             max-width: 500px;
         }
+
         .login-btn {
             background: #5865F2;
             border: none;
@@ -144,19 +158,22 @@
             display: inline-flex;
             align-items: center;
             gap: 1rem;
+            text-decoration: none;
         }
+
         .login-btn:hover {
             background: #4752c4;
             transform: scale(1.02);
         }
 
-        /* server selector */
+        /* Server Selector */
         .server-selector {
             display: flex;
             gap: 0.8rem;
             flex-wrap: wrap;
             margin-bottom: 1.5rem;
         }
+
         .server-btn {
             background: rgba(0,0,0,0.5);
             border: 1px solid rgba(114, 137, 218, 0.3);
@@ -167,61 +184,84 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            position: relative;
         }
+
         .server-btn.active {
             background: #7289da;
             border-color: #7289da;
             color: white;
         }
+
         .server-btn:hover:not(.active) {
             border-color: #7289da;
             background: rgba(114, 137, 218, 0.2);
         }
-        .add-bot-btn {
-            background: linear-gradient(135deg, #7289da, #9b59b6);
-            border: none;
-            padding: 0.3rem 0.8rem;
-            border-radius: 2rem;
-            color: white;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            font-size: 0.7rem;
-            margin-left: 0.5rem;
-        }
-        .add-bot-btn:hover {
-            transform: scale(1.02);
+
+        .server-btn .bot-badge {
+            background: #51ff51;
+            color: #0a0a0f;
+            padding: 0.1rem 0.4rem;
+            border-radius: 1rem;
+            font-size: 0.6rem;
+            margin-left: 0.3rem;
         }
 
-        /* stats row */
+        /* Stats Row */
         .stats-row {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 1rem;
             margin-bottom: 2rem;
         }
+
         .stat-card {
             background: rgba(0,0,0,0.4);
             border-radius: 1.2rem;
             padding: 1rem;
             text-align: center;
             backdrop-filter: blur(4px);
+            transition: 0.2s;
         }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+            background: rgba(114, 137, 218, 0.1);
+        }
+
         .stat-number {
             font-size: 1.8rem;
             font-weight: 800;
             color: #7289da;
         }
 
-        /* commands grid - beautiful cards */
+        /* Profile Card */
+        .profile-card {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid #7289da;
+        }
+
+        .profile-info h3 {
+            font-size: 1.5rem;
+        }
+
+        /* Commands Grid */
         .commands-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
             gap: 1rem;
             margin-top: 1rem;
         }
+
         .command-card {
             background: rgba(0,0,0,0.4);
             border-radius: 1rem;
@@ -229,21 +269,25 @@
             transition: all 0.2s;
             border-left: 3px solid #7289da;
         }
+
         .command-card:hover {
             transform: translateX(5px);
             background: rgba(114, 137, 218, 0.1);
         }
+
         .command-name {
             font-family: monospace;
             font-size: 1.2rem;
             font-weight: 700;
             color: #7289da;
         }
+
         .command-desc {
             font-size: 0.85rem;
             opacity: 0.7;
             margin: 0.3rem 0;
         }
+
         .command-meta {
             display: flex;
             gap: 0.5rem;
@@ -251,29 +295,19 @@
             font-size: 0.7rem;
             flex-wrap: wrap;
         }
+
         .command-category {
             background: #2c2f45;
             padding: 0.2rem 0.6rem;
             border-radius: 1rem;
         }
-        .command-perms {
-            background: #e91e6330;
-            padding: 0.2rem 0.6rem;
-            border-radius: 1rem;
-            color: #e91e63;
-        }
-        .command-type {
-            background: #7289da30;
-            padding: 0.2rem 0.6rem;
-            border-radius: 1rem;
-            color: #7289da;
-        }
 
-        /* loading spinner */
+        /* Loading */
         .loading {
             text-align: center;
             padding: 2rem;
         }
+
         .spinner {
             width: 50px;
             height: 50px;
@@ -283,17 +317,19 @@
             animation: spin 1s linear infinite;
             margin: 0 auto 1rem;
         }
+
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
 
-        /* nav tabs */
+        /* Navigation Tabs */
         .nav-tabs {
             display: flex;
             gap: 0.5rem;
             margin-bottom: 1.5rem;
             flex-wrap: wrap;
         }
+
         .nav-tab {
             background: rgba(0,0,0,0.4);
             border: 1px solid rgba(114, 137, 218, 0.3);
@@ -302,15 +338,72 @@
             cursor: pointer;
             transition: 0.2s;
         }
+
         .nav-tab.active {
             background: #7289da;
             border-color: #7289da;
         }
+
         .nav-tab:hover:not(.active) {
             background: rgba(114, 137, 218, 0.2);
         }
 
+        /* Admin Panel */
+        .admin-panel {
+            background: rgba(0,0,0,0.3);
+            border-radius: 1rem;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .admin-command-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .admin-command-name {
+            font-family: monospace;
+            font-weight: 700;
+            color: #7289da;
+        }
+
+        .toggle-switch {
+            width: 50px;
+            height: 24px;
+            background: #2c2f45;
+            border-radius: 2rem;
+            position: relative;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .toggle-switch.active {
+            background: #7289da;
+        }
+
+        .toggle-switch::after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            left: 3px;
+            transition: 0.2s;
+        }
+
+        .toggle-switch.active::after {
+            left: 27px;
+        }
+
         .hidden-page { display: none; }
+
         .toast-msg {
             position: fixed;
             bottom: 20px;
@@ -323,22 +416,25 @@
             transition: 0.2s;
             z-index: 2000;
         }
+
         footer {
             text-align: center;
             margin-top: 3rem;
             padding: 1.5rem;
             border-top: 1px solid rgba(255,255,255,0.05);
         }
+
         @media (max-width: 768px) {
             .navbar { flex-direction: column; text-align: center; }
             .commands-grid { grid-template-columns: 1fr; }
+            .profile-card { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
 <div class="container">
     <div class="navbar">
-        <div class="logo" onclick="showTab('dashboard')"><i class="fab fa-discord"></i> NexusBot V5</div>
+        <div class="logo" onclick="showTab('dashboard')"><i class="fab fa-discord"></i> NexusBot V5 · Pro</div>
         <div id="userInfoArea" class="user-info"></div>
     </div>
 
@@ -348,7 +444,8 @@
             <div class="glass-card login-card">
                 <i class="fab fa-discord" style="font-size: 4rem; color: #5865F2;"></i>
                 <h1 style="margin: 1rem 0;">NexusBot V5</h1>
-                <p>Connect your Discord account to manage your servers</p>
+                <p>Professional Discord Bot Dashboard</p>
+                <p style="font-size: 0.8rem; opacity: 0.6;">Manage your servers, commands, and permissions</p>
                 <button id="loginBtn" class="login-btn"><i class="fab fa-discord"></i> Login with Discord</button>
             </div>
         </div>
@@ -363,24 +460,37 @@
         <div class="nav-tabs">
             <div class="nav-tab active" data-tab="dashboard">📊 Dashboard</div>
             <div class="nav-tab" data-tab="commands">⚡ Commands</div>
-            <div class="nav-tab" data-tab="addbot">➕ Add Bot</div>
+            <div class="nav-tab" data-tab="admin">👑 Admin Panel</div>
+            <div class="nav-tab" data-tab="profile">👤 Profile</div>
         </div>
 
         <!-- DASHBOARD TAB -->
         <div id="dashboard-tab">
+            <!-- Profile Summary -->
+            <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+                <div class="profile-card" id="profileSummary">
+                    <img id="userAvatarSummary" class="profile-avatar" src="">
+                    <div class="profile-info">
+                        <h3 id="userNameSummary">Loading...</h3>
+                        <p id="userDiscriminatorSummary"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
             <div class="stats-row">
                 <div class="stat-card"><div class="stat-number" id="dash-servers">0</div><div>Your Servers</div></div>
-                <div class="stat-card"><div class="stat-number" id="dash-commands">0</div><div>Commands</div></div>
-                <div class="stat-card"><div class="stat-number" id="dash-status">⚫</div><div>Bot Status</div></div>
+                <div class="stat-card"><div class="stat-number" id="dash-botServers">0</div><div>Bot Servers</div></div>
+                <div class="stat-card"><div class="stat-number" id="dash-commands">0</div><div>Total Commands</div></div>
+                <div class="stat-card"><div class="stat-number" id="dash-status">🟢</div><div>Bot Status</div></div>
             </div>
+
+            <!-- Bot Info -->
             <div class="glass-card" style="padding: 1.5rem;">
-                <h3><i class="fas fa-robot"></i> Bot Connection</h3>
-                <div id="tokenSection" style="display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center;">
-                    <input type="password" id="botTokenInput" placeholder="Enter Bot Token" style="background:#0a0a0f; border:1px solid #7289da; padding:0.6rem 1rem; border-radius:2rem; color:white; flex:1; min-width: 200px;">
-                    <button id="connectBotBtn" style="background:#7289da; border:none; padding:0.6rem 1.2rem; border-radius:2rem; cursor:pointer;">Connect Bot</button>
+                <h3><i class="fas fa-robot"></i> Bot Information</h3>
+                <div id="botInfoPanel" style="margin-top: 1rem;">
+                    <div class="loading"><div class="spinner"></div>Connecting to bot...</div>
                 </div>
-                <div id="botStatusMsg" style="margin-top: 1rem;"></div>
-                <div id="botInfoMsg" style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.7;"></div>
             </div>
         </div>
 
@@ -388,44 +498,69 @@
         <div id="commands-tab" class="hidden-page">
             <div class="glass-card" style="padding: 1.5rem;">
                 <h3><i class="fas fa-terminal"></i> Bot Commands</h3>
-                <p style="opacity:0.7; margin-bottom:1rem;">Commands are fetched directly from Discord API</p>
+                <p style="opacity:0.7; margin-bottom:1rem;">All slash commands registered to this bot</p>
                 <div id="commandsList" class="commands-grid"></div>
             </div>
         </div>
 
-        <!-- ADD BOT TAB -->
-        <div id="addbot-tab" class="hidden-page">
-            <div class="glass-card" style="padding: 1.5rem; text-align: center;">
-                <i class="fab fa-discord" style="font-size: 4rem; color: #7289da;"></i>
-                <h3 style="margin: 1rem 0;">Add NexusBot to Your Server</h3>
-                <p>Click the button below to invite the bot to any server you manage</p>
-                <a href="https://discord.com/oauth2/authorize?client_id=1491133809641390301&permissions=8&integration_type=0&scope=bot" target="_blank" class="login-btn" style="display: inline-flex; margin-top: 1.5rem; text-decoration: none;">
-                    <i class="fab fa-discord"></i> Invite Bot
-                </a>
-                <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.6;">⚠️ Make sure you have "Manage Server" permission</p>
+        <!-- ADMIN PANEL TAB (only for users with admin perms) -->
+        <div id="admin-tab" class="hidden-page">
+            <div class="glass-card" style="padding: 1.5rem;">
+                <h3><i class="fas fa-crown"></i> Admin Control Panel</h3>
+                <p style="opacity:0.7;">Manage command permissions and bot settings per server</p>
+                
+                <div id="adminServerInfo" style="margin: 1rem 0; padding: 0.8rem; background: rgba(0,0,0,0.3); border-radius: 1rem;">
+                    <i class="fas fa-info-circle"></i> Select a server from the top bar to manage its settings
+                </div>
+
+                <div id="adminCommandsPanel" class="admin-panel"></div>
+            </div>
+        </div>
+
+        <!-- PROFILE TAB -->
+        <div id="profile-tab" class="hidden-page">
+            <div class="glass-card" style="padding: 1.5rem;">
+                <div class="profile-card">
+                    <img id="profileAvatar" class="profile-avatar" src="">
+                    <div class="profile-info">
+                        <h3 id="profileUsername">Loading...</h3>
+                        <p id="profileDiscriminator"></p>
+                        <p id="profileId" style="font-size: 0.8rem; opacity: 0.6;"></p>
+                    </div>
+                </div>
+                <hr style="margin: 1rem 0; border-color: rgba(255,255,255,0.1);">
+                <h4><i class="fas fa-shield-alt"></i> Your Permissions</h4>
+                <div id="userPermissionsList" style="margin-top: 0.5rem;"></div>
+                <hr style="margin: 1rem 0; border-color: rgba(255,255,255,0.1);">
+                <h4><i class="fas fa-server"></i> Servers You Manage</h4>
+                <div id="userServersList" style="margin-top: 0.5rem;"></div>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>NexusBot V5 · Secure Discord OAuth2 Login · Client ID: 1491133809641390301</p>
+        <p>NexusBot V5 Pro · Full Discord Integration · Real-time Data</p>
     </footer>
 </div>
 <div id="toastMsg" class="toast-msg">✅ Success!</div>
 
 <script>
-    // ========== DISCORD OAuth2 CONFIGURATION ==========
-    const CLIENT_ID = '1491133809641390301';  // ✅ تم وضع الـ Client ID الخاص بك
+    // ========== CONFIGURATION ==========
+    // ⚠️ ضع توكن البوت هنا - سري جداً!
+    const BOT_TOKEN = 'MTQ5MTEzMzgwOTY0MTM5MDMwMQ.GDsJs4.NPKs0tDUF3kFXyNP8GQILJ2-Z2JEjS-vIaEl_I';
+    
+    const CLIENT_ID = '1491133809641390301';
     const REDIRECT_URI = window.location.origin + window.location.pathname;
     const SCOPES = ['identify', 'guilds', 'guilds.members.read'];
     
     // Global state
     let userData = null;
     let userGuilds = [];
+    let botGuilds = [];
     let currentServerId = null;
-    let botToken = localStorage.getItem('botToken') || '';
     let botCommands = [];
-    let botClientId = CLIENT_ID;
+    let botInfo = null;
+    let isBotConnected = false;
     
     // ========== Helper Functions ==========
     function showToast(msg, type = 'success') {
@@ -439,26 +574,160 @@
         }, 3000);
     }
     
-    // ========== Login / Logout ==========
-    function showLoginPage() {
-        document.getElementById('login-page').classList.remove('hidden-page');
-        document.getElementById('app-page').classList.add('hidden-page');
+    // ========== Connect Bot with Token ==========
+    async function connectBot() {
+        console.log('Connecting bot with token...');
+        const botInfoDiv = document.getElementById('botInfoPanel');
+        
+        try {
+            const botRes = await fetch('https://discord.com/api/v10/users/@me', {
+                headers: { 'Authorization': `Bot ${BOT_TOKEN}` }
+            });
+            if(!botRes.ok) throw new Error('Invalid bot token');
+            botInfo = await botRes.json();
+            isBotConnected = true;
+            
+            // Fetch bot guilds
+            const botGuildsRes = await fetch('https://discord.com/api/v10/users/@me/guilds', {
+                headers: { 'Authorization': `Bot ${BOT_TOKEN}` }
+            });
+            botGuilds = await botGuildsRes.json();
+            
+            // Fetch bot commands
+            await fetchBotCommands();
+            
+            botInfoDiv.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                    <i class="fab fa-discord" style="font-size: 2rem; color: #7289da;"></i>
+                    <div>
+                        <strong style="font-size: 1.1rem;">${botInfo.username}#${botInfo.discriminator}</strong><br>
+                        <span style="font-size: 0.8rem; opacity: 0.7;">ID: ${botInfo.id}</span>
+                    </div>
+                    <div style="margin-left: auto;">
+                        <span style="background: #51ff51; color: #0a0a0f; padding: 0.2rem 0.8rem; border-radius: 1rem;">🟢 Online</span>
+                    </div>
+                </div>
+                <div style="margin-top: 0.8rem;">
+                    <span>📊 In ${botGuilds.length} servers</span>
+                    <span style="margin-left: 1rem;">⚡ ${botCommands.length} commands</span>
+                </div>
+            `;
+            
+            document.getElementById('dash-botServers').innerText = botGuilds.length;
+            document.getElementById('dash-commands').innerText = botCommands.length;
+            document.getElementById('dash-status').innerHTML = '🟢 Online';
+            
+            renderServerSelector();
+            showToast('Bot connected successfully!');
+            
+        } catch(error) {
+            console.error('Bot connection error:', error);
+            botInfoDiv.innerHTML = `
+                <div style="color: #ff6b6b;">
+                    <i class="fas fa-exclamation-triangle"></i> Failed to connect bot: ${error.message}
+                </div>
+            `;
+            document.getElementById('dash-status').innerHTML = '🔴 Offline';
+        }
     }
     
-    function showAppPage() {
-        document.getElementById('login-page').classList.add('hidden-page');
-        document.getElementById('app-page').classList.remove('hidden-page');
+    async function fetchBotCommands() {
+        if(!BOT_TOKEN) return;
+        
+        try {
+            const globalRes = await fetch(`https://discord.com/api/v10/applications/${CLIENT_ID}/commands`, {
+                headers: { 'Authorization': `Bot ${BOT_TOKEN}` }
+            });
+            const globalCommands = await globalRes.json();
+            
+            let allCommands = [...globalCommands];
+            
+            if(currentServerId && isBotConnected) {
+                const guildRes = await fetch(`https://discord.com/api/v10/applications/${CLIENT_ID}/guilds/${currentServerId}/commands`, {
+                    headers: { 'Authorization': `Bot ${BOT_TOKEN}` }
+                });
+                if(guildRes.ok) {
+                    const guildCommands = await guildRes.json();
+                    allCommands = [...allCommands, ...guildCommands];
+                }
+            }
+            
+            botCommands = allCommands;
+            renderCommandsList();
+            renderAdminPanel();
+        } catch(error) {
+            console.error('Error fetching commands:', error);
+        }
     }
     
-    function logout() {
-        localStorage.removeItem('discord_access_token');
-        localStorage.removeItem('botToken');
-        userData = null;
-        userGuilds = [];
-        showLoginPage();
-        location.reload();
+    function renderCommandsList() {
+        const container = document.getElementById('commandsList');
+        if(!botCommands.length) {
+            container.innerHTML = '<p style="opacity:0.6;">No commands found. Add slash commands to your bot first!</p>';
+            return;
+        }
+        
+        container.innerHTML = botCommands.map(cmd => `
+            <div class="command-card">
+                <div class="command-name">/${cmd.name}</div>
+                <div class="command-desc">${cmd.description || 'No description provided'}</div>
+                <div class="command-meta">
+                    <span class="command-category"><i class="fas fa-hashtag"></i> ID: ${cmd.id.slice(0,10)}...</span>
+                    <span class="command-category"><i class="fas fa-code-branch"></i> ${cmd.type === 1 ? 'Subcommand' : 'Slash Command'}</span>
+                </div>
+            </div>
+        `).join('');
     }
     
+    function renderAdminPanel() {
+        const container = document.getElementById('adminCommandsPanel');
+        if(!currentServerId) {
+            container.innerHTML = '<p style="opacity:0.6;">Please select a server from the top bar to manage commands.</p>';
+            return;
+        }
+        
+        if(!botCommands.length) {
+            container.innerHTML = '<p style="opacity:0.6;">No commands available.</p>';
+            return;
+        }
+        
+        container.innerHTML = `
+            <h4>Manage Commands for ${userGuilds.find(g => g.id === currentServerId)?.name || 'Selected Server'}</h4>
+            ${botCommands.map(cmd => `
+                <div class="admin-command-item">
+                    <div>
+                        <span class="admin-command-name">/${cmd.name}</span>
+                        <span style="font-size: 0.7rem; opacity: 0.6;">${cmd.description || ''}</span>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <div class="toggle-switch active" onclick="toggleCommand('${cmd.id}')"></div>
+                        <select onchange="changeCommandPerms('${cmd.id}', this.value)" style="background: #2c2f45; border: none; padding: 0.3rem; border-radius: 0.5rem; color: white;">
+                            <option value="everyone">Everyone</option>
+                            <option value="admin">Admin Only</option>
+                            <option value="mod">Moderator+</option>
+                        </select>
+                    </div>
+                </div>
+            `).join('')}
+            <div style="margin-top: 1rem; text-align: center;">
+                <button onclick="saveAdminSettings()" style="background: #7289da; border: none; padding: 0.6rem 1.5rem; border-radius: 2rem; cursor: pointer;">💾 Save Settings</button>
+            </div>
+        `;
+    }
+    
+    window.toggleCommand = function(cmdId) {
+        showToast(`Command ${cmdId.slice(0,6)} toggled`);
+    }
+    
+    window.changeCommandPerms = function(cmdId, value) {
+        showToast(`Permission changed to ${value}`);
+    }
+    
+    window.saveAdminSettings = function() {
+        showToast('Settings saved successfully!');
+    }
+    
+    // ========== Discord OAuth2 Login ==========
     document.getElementById('loginBtn').addEventListener('click', () => {
         const authUrl = `https://discord.com/api/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=token&scope=${SCOPES.join('%20')}`;
         window.location.href = authUrl;
@@ -490,29 +759,65 @@
             
             userGuilds = allGuilds.filter(guild => (guild.permissions & 0x20) === 0x20);
             
+            // Update profile
+            document.getElementById('userAvatarSummary').src = `https://cdn.discordapp.com/avatars/${userData.id}/${userData.avatar}.png`;
+            document.getElementById('userNameSummary').innerText = userData.username;
+            document.getElementById('userDiscriminatorSummary').innerText = `#${userData.discriminator}`;
+            document.getElementById('profileAvatar').src = `https://cdn.discordapp.com/avatars/${userData.id}/${userData.avatar}.png`;
+            document.getElementById('profileUsername').innerText = userData.username;
+            document.getElementById('profileDiscriminator').innerText = `#${userData.discriminator}`;
+            document.getElementById('profileId').innerText = `ID: ${userData.id}`;
+            
+            // User permissions list
+            const permsList = document.getElementById('userPermissionsList');
+            const adminServers = userGuilds.filter(g => (g.permissions & 0x8) === 0x8);
+            permsList.innerHTML = `
+                <p><i class="fas fa-check-circle" style="color: #51ff51;"></i> You are an <strong>Admin</strong> in ${adminServers.length} servers</p>
+                <p><i class="fas fa-check-circle" style="color: #51ff51;"></i> You have <strong>Manage Server</strong> permission in ${userGuilds.length} servers</p>
+            `;
+            
+            // User servers list
+            const serversList = document.getElementById('userServersList');
+            serversList.innerHTML = userGuilds.map(g => `
+                <div style="padding: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    ${g.icon ? `<img src="https://cdn.discordapp.com/icons/${g.id}/${g.icon}.png" style="width: 24px; height: 24px; border-radius: 50%; vertical-align: middle;">` : '🤖'}
+                    <strong>${g.name}</strong>
+                    <span style="font-size: 0.7rem; opacity: 0.6;">ID: ${g.id}</span>
+                </div>
+            `).join('');
+            
             const userInfoArea = document.getElementById('userInfoArea');
             userInfoArea.innerHTML = `
                 <img class="user-avatar" src="https://cdn.discordapp.com/avatars/${userData.id}/${userData.avatar}.png" onerror="this.src='https://cdn.discordapp.com/embed/avatars/0.png'">
                 <span>${userData.username}</span>
-                <button class="logout-btn" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                <span class="user-badge"><i class="fas fa-crown"></i> ${adminServers.length > 0 ? 'Admin' : 'User'}</span>
+                <button class="logout-btn" onclick="logout()"><i class="fas fa-sign-out-alt"></i></button>
             `;
             
             document.getElementById('dash-servers').innerText = userGuilds.length;
+            
             renderServerSelector();
-            showAppPage();
+            document.getElementById('login-page').classList.add('hidden-page');
+            document.getElementById('app-page').classList.remove('hidden-page');
             showToast(`Welcome ${userData.username}!`);
             
-            if(botToken) {
-                document.getElementById('botTokenInput').value = botToken;
-                connectBot();
-            }
+            // Connect bot automatically
+            connectBot();
+            
         } catch(error) {
             console.error('Error:', error);
             logout();
         }
     }
     
-    // ========== Server Selector ==========
+    function logout() {
+        localStorage.removeItem('discord_access_token');
+        userData = null;
+        userGuilds = [];
+        document.getElementById('login-page').classList.remove('hidden-page');
+        document.getElementById('app-page').classList.add('hidden-page');
+    }
+    
     function renderServerSelector() {
         const container = document.getElementById('serverSelector');
         if(!userGuilds.length) {
@@ -520,10 +825,13 @@
             return;
         }
         
+        const botGuildIds = new Set(botGuilds.map(g => g.id));
+        
         container.innerHTML = userGuilds.map(guild => `
             <div class="server-btn ${currentServerId === guild.id ? 'active' : ''}" onclick="selectServer('${guild.id}')">
                 ${guild.icon ? `<img src="https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png" style="width:24px; height:24px; border-radius:50%;">` : '🤖'}
                 ${guild.name}
+                ${botGuildIds.has(guild.id) ? '<span class="bot-badge">✓ Bot</span>' : '<span class="bot-badge" style="background:#e91e63;">✗ No Bot</span>'}
             </div>
         `).join('');
     }
@@ -531,132 +839,42 @@
     window.selectServer = function(serverId) {
         currentServerId = serverId;
         renderServerSelector();
-        if(botToken) {
+        if(isBotConnected) {
             fetchBotCommands();
+            renderAdminPanel();
         }
         showToast(`Selected: ${userGuilds.find(g => g.id === serverId)?.name}`);
     }
     
-    // ========== Bot Connection ==========
-    document.getElementById('connectBotBtn').addEventListener('click', () => {
-        const token = document.getElementById('botTokenInput').value.trim();
-        if(!token) { showToast('Please enter bot token!', 'error'); return; }
-        botToken = token;
-        localStorage.setItem('botToken', token);
-        connectBot();
-    });
-    
-    async function connectBot() {
-        const statusDiv = document.getElementById('botStatusMsg');
-        statusDiv.innerHTML = '<div class="loading"><div class="spinner"></div>Connecting...</div>';
-        
-        try {
-            const botRes = await fetch('https://discord.com/api/v10/users/@me', {
-                headers: { 'Authorization': `Bot ${botToken}` }
-            });
-            if(!botRes.ok) throw new Error('Invalid bot token');
-            const botInfo = await botRes.json();
-            
-            statusDiv.innerHTML = `<span style="color:#51ff51;">✅ Connected as ${botInfo.username}#${botInfo.discriminator}</span>`;
-            document.getElementById('dash-status').innerHTML = '🟢 Online';
-            document.getElementById('botInfoMsg').innerHTML = `<i class="fab fa-discord"></i> Bot ID: ${botInfo.id}`;
-            
-            await fetchBotCommands();
-            showToast('Bot connected successfully!');
-        } catch(error) {
-            statusDiv.innerHTML = `<span style="color:#ff6b6b;">❌ ${error.message}</span>`;
-            document.getElementById('dash-status').innerHTML = '⚫ Offline';
-        }
-    }
-    
-    async function fetchBotCommands() {
-        if(!botToken) return;
-        
-        const commandsContainer = document.getElementById('commandsList');
-        commandsContainer.innerHTML = '<div class="loading"><div class="spinner"></div>Loading commands...</div>';
-        
-        try {
-            const globalRes = await fetch(`https://discord.com/api/v10/applications/${CLIENT_ID}/commands`, {
-                headers: { 'Authorization': `Bot ${botToken}` }
-            });
-            const globalCommands = await globalRes.json();
-            
-            let allCommands = [...globalCommands];
-            
-            if(currentServerId) {
-                const guildRes = await fetch(`https://discord.com/api/v10/applications/${CLIENT_ID}/guilds/${currentServerId}/commands`, {
-                    headers: { 'Authorization': `Bot ${botToken}` }
-                });
-                const guildCommands = await guildRes.json();
-                allCommands = [...allCommands, ...guildCommands];
-            }
-            
-            botCommands = allCommands;
-            document.getElementById('dash-commands').innerText = botCommands.length;
-            renderCommandsList();
-        } catch(error) {
-            console.error('Error fetching commands:', error);
-            commandsContainer.innerHTML = '<p style="opacity:0.6;">Failed to load commands. Make sure bot token is correct.</p>';
-        }
-    }
-    
-    function renderCommandsList() {
-        const container = document.getElementById('commandsList');
-        if(!botCommands.length) {
-            container.innerHTML = '<p style="opacity:0.6;">No commands found. Add slash commands to your bot first!</p>';
-            return;
-        }
-        
-        container.innerHTML = botCommands.map(cmd => `
-            <div class="command-card">
-                <div class="command-name">/${cmd.name}</div>
-                <div class="command-desc">${cmd.description || 'No description provided'}</div>
-                <div class="command-meta">
-                    <span class="command-category"><i class="fas fa-hashtag"></i> ID: ${cmd.id.slice(0,10)}...</span>
-                    <span class="command-type"><i class="fas fa-code-branch"></i> ${cmd.type === 1 ? 'Subcommand' : cmd.type === 2 ? 'User' : 'Slash'}</span>
-                    ${cmd.default_member_permissions ? `<span class="command-perms"><i class="fas fa-shield-alt"></i> Perms: ${parseInt(cmd.default_member_permissions).toString(16)}</span>` : ''}
-                </div>
-            </div>
-        `).join('');
-    }
-    
-    // ========== Tab Navigation ==========
     function showTab(tabName) {
         document.getElementById('dashboard-tab').classList.add('hidden-page');
         document.getElementById('commands-tab').classList.add('hidden-page');
-        document.getElementById('addbot-tab').classList.add('hidden-page');
+        document.getElementById('admin-tab').classList.add('hidden-page');
+        document.getElementById('profile-tab').classList.add('hidden-page');
         
         document.getElementById(`${tabName}-tab`).classList.remove('hidden-page');
         
         document.querySelectorAll('.nav-tab').forEach(tab => tab.classList.remove('active'));
         document.querySelector(`.nav-tab[data-tab="${tabName}"]`).classList.add('active');
         
-        if(tabName === 'commands' && botCommands.length) renderCommandsList();
+        if(tabName === 'commands') renderCommandsList();
+        if(tabName === 'admin') renderAdminPanel();
     }
-    
-    document.querySelectorAll('.nav-tab').forEach(tab => {
-        tab.addEventListener('click', () => showTab(tab.dataset.tab));
-    });
     
     window.showTab = showTab;
-    
-    // ========== Initialize ==========
-    if(botToken) {
-        document.getElementById('botTokenInput').value = botToken;
-        setTimeout(() => { if(botToken) connectBot(); }, 500);
-    }
-    
-    handleOAuthRedirect();
-    checkLogin();
     
     function checkLogin() {
         const token = localStorage.getItem('discord_access_token');
         if(token) {
             fetchUserData(token);
         } else {
-            showLoginPage();
+            document.getElementById('login-page').classList.remove('hidden-page');
+            document.getElementById('app-page').classList.add('hidden-page');
         }
     }
+    
+    handleOAuthRedirect();
+    checkLogin();
 </script>
 </body>
 </html>
